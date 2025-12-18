@@ -29,6 +29,17 @@ public class SplitSession {
                         .toList();
     }
 
+    public static List<String> getAllQuality (Sessions sessions){
+        List<SleepingSession> sessionsList = sessions.getSessions();
+        return sessionsList.stream()
+                .map(SleepingSession::getSession)
+                .map(s -> {
+                    List<String> strings = new ArrayList<>( Arrays.asList(s.split(";")));
+                    return strings.getLast();
+                })
+                .toList();
+    }
+
     public static List<String> getAllSession(SleepingSession session){
         return Arrays.stream(session.getSession().split(";")).toList();
     }
