@@ -14,12 +14,12 @@ public class FunctionsOnSleepTracker {
 
     public List<TypedFunction<?>> fillList() {
         return List.of(new PrintCountSessions(),
-                new getMinDurationSessions(),
-                new getMaxDurationSessions(),
-                new getAverageDurationSessions(),
-                new getBadDreams(),
-                new getInsomniaNights(),
-                new getUserType());
+                new GetMinDurationSessions(),
+                new GetMaxDurationSessions(),
+                new GetAverageDurationSessions(),
+                new GetBadDreams(),
+                new GetInsomniaNights(),
+                new GetUserType());
     }
 
 
@@ -35,7 +35,7 @@ public class FunctionsOnSleepTracker {
         }
     }
 
-    static class getMinDurationSessions implements TypedFunction<Integer> {
+    static class GetMinDurationSessions implements TypedFunction<Integer> {
         @Override
         public SleepAnalysisResult<Integer> apply(Sessions sessions) {
             List<String> unprocessedString = sessions.getSessions().stream()
@@ -56,7 +56,7 @@ public class FunctionsOnSleepTracker {
         }
     }
 
-    static class getMaxDurationSessions implements TypedFunction<Integer> {
+    static class GetMaxDurationSessions implements TypedFunction<Integer> {
         @Override
         public SleepAnalysisResult<Integer> apply(Sessions sessions) {
             List<String> unprocessedString = sessions.getSessions().stream()
@@ -78,7 +78,7 @@ public class FunctionsOnSleepTracker {
         }
     }
 
-    static class getAverageDurationSessions implements TypedFunction<Integer> {
+    static class GetAverageDurationSessions implements TypedFunction<Integer> {
         @Override
         public SleepAnalysisResult<Integer> apply(Sessions sessions) {
             List<String> unprocessedString = sessions.getSessions().stream()
@@ -103,7 +103,7 @@ public class FunctionsOnSleepTracker {
         }
     }
 
-    static class getBadDreams implements TypedFunction<Integer> {
+    static class GetBadDreams implements TypedFunction<Integer> {
         @Override
         public SleepAnalysisResult<Integer> apply(Sessions sessions) {
             List<String> unprocessedString = sessions.getSessions().stream()
@@ -119,7 +119,7 @@ public class FunctionsOnSleepTracker {
         }
     }
 
-    static class getInsomniaNights implements TypedFunction<Integer> {
+    static class GetInsomniaNights implements TypedFunction<Integer> {
         @Override
         public SleepAnalysisResult<Integer> apply(Sessions sessions) {
             List<String> unprocessedString = sessions.getSessions().stream()
@@ -143,7 +143,7 @@ public class FunctionsOnSleepTracker {
         }
     }
 
-    static class getUserType implements TypedFunction<String> {
+    static class GetUserType implements TypedFunction<String> {
         @Override
         public SleepAnalysisResult<String> apply(Sessions sessions) {
             List<String> unprocessedString = sessions.getSessions().stream()

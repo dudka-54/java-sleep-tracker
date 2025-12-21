@@ -65,7 +65,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("01.01.24 23:00;02.01.24 07:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getMinDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetMinDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -78,7 +78,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("03.01.24 22:00;04.01.24 06:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getMinDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetMinDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -86,7 +86,7 @@ public class SleepTrackerAppTest {
     @Test
     void getMinDurationSessions_WhenNoSessions_ShouldHandleGracefully() {
         Sessions sessions = new Sessions(new ArrayList<>());
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getMinDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetMinDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -97,7 +97,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("01.01.24 23:00;01.01.24 23:45;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getMinDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetMinDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -108,7 +108,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("01.01.24 23:00;02.01.24 07:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getMaxDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetMaxDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -121,7 +121,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("03.01.24 22:00;04.01.24 08:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getMaxDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetMaxDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -129,7 +129,7 @@ public class SleepTrackerAppTest {
     @Test
     void getMaxDurationSessions_WhenNoSessions_ShouldHandleGracefully() {
         Sessions sessions = new Sessions(new ArrayList<>());
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getMaxDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetMaxDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -140,7 +140,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("01.01.24 20:00;02.01.24 14:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getMaxDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetMaxDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -151,7 +151,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("01.01.24 23:00;02.01.24 07:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getAverageDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetAverageDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -164,7 +164,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("03.01.24 22:00;04.01.24 06:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getAverageDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetAverageDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -172,7 +172,7 @@ public class SleepTrackerAppTest {
     @Test
     void getAverageDurationSessions_WhenNoSessions_ShouldHandleGracefully() {
         Sessions sessions = new Sessions(new ArrayList<>());
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getAverageDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetAverageDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -184,7 +184,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("02.01.24 01:00;02.01.24 02:15;BAD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getAverageDurationSessions().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetAverageDurationSessions().apply(sessions);
 
         assertNotNull(result);
     }
@@ -196,7 +196,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("02.01.24 01:00;02.01.24 08:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getBadDreams().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetBadDreams().apply(sessions);
 
         assertNotNull(result);
         assertEquals(0, result.getValue());
@@ -210,7 +210,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("03.01.24 22:00;04.01.24 06:00;BAD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getBadDreams().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetBadDreams().apply(sessions);
 
         assertNotNull(result);
         assertEquals(3, result.getValue());
@@ -225,7 +225,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("04.01.24 23:30;05.01.24 07:30;BAD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getBadDreams().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetBadDreams().apply(sessions);
 
         assertNotNull(result);
         assertEquals(2, result.getValue());
@@ -234,7 +234,7 @@ public class SleepTrackerAppTest {
     @Test
     void getBadDreams_WhenNoSessions_ShouldReturnZero() {
         Sessions sessions = new Sessions(new ArrayList<>());
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getBadDreams().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetBadDreams().apply(sessions);
 
         assertNotNull(result);
         assertEquals(0, result.getValue());
@@ -246,7 +246,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("01.01.24 23:00;02.01.24 07:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getInsomniaNights().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetInsomniaNights().apply(sessions);
 
         assertNotNull(result);
     }
@@ -259,7 +259,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("03.01.24 22:00;04.01.24 06:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getInsomniaNights().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetInsomniaNights().apply(sessions);
 
         assertNotNull(result);
     }
@@ -271,7 +271,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("01.01.24 14:00;01.01.24 16:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.getInsomniaNights().apply(sessions);
+        SleepAnalysisResult<Integer> result = new FunctionsOnSleepTracker.GetInsomniaNights().apply(sessions);
 
         assertNotNull(result);
     }
@@ -284,7 +284,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("02.01.24 00:30;02.01.24 08:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<String> result = new FunctionsOnSleepTracker.getUserType().apply(sessions);
+        SleepAnalysisResult<String> result = new FunctionsOnSleepTracker.GetUserType().apply(sessions);
 
         assertNotNull(result);
         String type = result.getValue();
@@ -298,7 +298,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("02.01.24 20:30;03.01.24 08:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<String> result = new FunctionsOnSleepTracker.getUserType().apply(sessions);
+        SleepAnalysisResult<String> result = new FunctionsOnSleepTracker.GetUserType().apply(sessions);
 
         assertNotNull(result);
     }
@@ -311,7 +311,7 @@ public class SleepTrackerAppTest {
         sleepingSessions.add(new SleepingSession("03.01.24 22:30;04.01.24 08:00;GOOD"));
 
         Sessions sessions = new Sessions(sleepingSessions);
-        SleepAnalysisResult<String> result = new FunctionsOnSleepTracker.getUserType().apply(sessions);
+        SleepAnalysisResult<String> result = new FunctionsOnSleepTracker.GetUserType().apply(sessions);
 
         assertNotNull(result);
         String type = result.getValue();
@@ -323,7 +323,7 @@ public class SleepTrackerAppTest {
         Sessions sessions = new Sessions(new ArrayList<>());
 
         try {
-            SleepAnalysisResult<String> result = new FunctionsOnSleepTracker.getUserType().apply(sessions);
+            SleepAnalysisResult<String> result = new FunctionsOnSleepTracker.GetUserType().apply(sessions);
             assertNotNull(result);
         } catch (Exception e) {
             assertTrue(e instanceof IndexOutOfBoundsException ||
