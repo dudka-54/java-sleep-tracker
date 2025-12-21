@@ -8,7 +8,7 @@ public class Sessions {
         return sessions;
     }
 
-    List<SleepingSession> sessions = new ArrayList<>();
+    private List<SleepingSession> sessions = new ArrayList<>();
 
     public Sessions(List<SleepingSession> sessions) {
         this.sessions = sessions;
