@@ -1,0 +1,36 @@
+package ru.yandex.practicum.sleeptracker;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
+import java.util.List;
+
+import static java.nio.file.Files.lines;
+
+public class SleepingSessionsLoader {
+
+    public List<String> sessionsLoaderList() {
+        List<String> sleepingSessions = List.of();
+        try {
+            sleepingSessions = lines(Paths.get("src/main/resources/sleep_log.txt"), StandardCharsets.UTF_8)
+                    .toList();
+        } catch (IOException e) {
+            System.out.println("Файл не найден " + e.getMessage());
+        }
+        return sleepingSessions;
+    }
+
+    public Sessions sessionsLoader() {
+        List<SleepingSession> sessions = List.of();
+        try {
+            List<String> sleepingSessions = lines(Paths.get("src/main/resources/sleep_log.txt"), StandardCharsets.UTF_8)
+                    .toList();
+            sessions = sleepingSessions.stream()
+                    .map(SleepingSession::new)
+                    .toList();
+        } catch (IOException e) {
+            System.out.println("Файл не найден " + e.getMessage());
+        }
+        return new Sessions(sessions);
+    }
+}

@@ -1,8 +1,19 @@
 package ru.yandex.practicum.sleeptracker;
 
-public class SleepTrackerApp {
+import java.util.List;
 
+public class SleepTrackerApp {
     public static void main(String[] args) {
+        List<TypedFunction<?>> functionList = new FunctionsOnSleepTracker().fillList();
+        SleepingSessionsLoader loader = new SleepingSessionsLoader();
+
+        functionList.stream()
+                .map(function -> {
+                    return function.apply(loader.sessionsLoader());
+                })
+                .forEach(result -> {
+                    System.out.println(result.getDescription() + result.getValue());
+                });
 
     }
 }
